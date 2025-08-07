@@ -10,4 +10,8 @@ less （npm install less less-loader --save-dev）
 rest.css（index.less）
 
 # UI库
-https://tdesign.tencent.com/react/getting-started
+https://tdesign.tencent.com/mobile-react/getting-started
+
+# 路由
+npm install react-router-dom
+懒加载
