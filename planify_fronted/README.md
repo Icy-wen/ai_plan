@@ -15,3 +15,7 @@ https://tdesign.tencent.com/mobile-react/getting-started
 # 路由
 npm install react-router-dom
 懒加载
+
+# axios
+npm i axios
+
