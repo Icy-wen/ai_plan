@@ -14,7 +14,6 @@ export default function MainLayout({ children }) {
     const path = location.pathname;
     if (path.includes('home')) setActiveKey('home');
     else if (path.includes('plan')) setActiveKey('plan');
-    else if (path.includes('tag')) setActiveKey('tag');
     else if (path.includes('profile')) setActiveKey('profile');
   }, [location.pathname]);
 
@@ -27,9 +26,7 @@ export default function MainLayout({ children }) {
       case 'plan':
         navigate('/plan');
         break;
-      case 'tag':
-        navigate('/tag');
-        break;
+
       case 'profile':
         navigate('/profile');
         break;
@@ -45,7 +42,6 @@ export default function MainLayout({ children }) {
         <Tabbar value={activeKey} onChange={handleTabChange}>
           <Tabbar.Item name="home" icon={<WapHomeO />}>首页</Tabbar.Item>
           <Tabbar.Item name="plan" icon={<Records />}>规划</Tabbar.Item>
-          <Tabbar.Item name="tag" icon={<FriendsO />}>标签</Tabbar.Item>
           <Tabbar.Item name="profile" icon={<UserCircleO />}>我的</Tabbar.Item>
         </Tabbar>
       </div>

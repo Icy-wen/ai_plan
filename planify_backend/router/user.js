@@ -134,4 +134,15 @@ router.post('/refresh', (ctx) => {
 
 })
 
+// 退出登录接口
+router.post('/logout', (ctx) => {
+  // 对于JWT认证，后端不需要做特殊处理
+  // 主要由前端清除token和用户信息
+  ctx.body = {
+    code: '1',
+    msg: '退出登录成功',
+    data: {}
+  }
+})
+
 module.exports = router

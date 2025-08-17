@@ -14,15 +14,16 @@ export default function Login() {
         //console.log(values)
         axios.post('/user/login',values).then(res=>{
           Toast({ message: '登录成功', theme: 'success', direction: 'column' });
-            localStorage.setItem('user',JSON.stringify(res.data))
-            localStorage.setItem('token',res.access_token)
-            localStorage.setItem('refresh_token',res.refresh_token)
-            navigate('/home')
+          localStorage.setItem('user',JSON.stringify(res.data))
+          localStorage.setItem('access_token',res.access_token)  // 修改这里，使用与拦截器相同的键名
+          localStorage.setItem('refresh_token',res.refresh_token)
+          navigate('/home')
         })
     }
 
     return (
         <div className={style.login}>
+            <h1 className={style.title}>planify</h1>
             <h1 className={style.title}>登录</h1>
             <div className={style['login-wrapper']}>
                 <div className={style.avater}>
@@ -33,7 +34,7 @@ export default function Login() {
                     onFinish={onFinish}
                     footer={
                         <div style={{ margin: '16px 16px 0' }}>
-                            <Button round nativeType='submit' type='primary' block>
+                            <Button round nativeType='submit' type='primary' color='#7bd4e6' block>
                                 登录
                             </Button>
                         </div>

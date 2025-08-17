@@ -12,6 +12,7 @@ const Profile=React.lazy(()=>import('@/page/Profile'))
 const EditIfo=React.lazy(()=>import('@/page/EditIfo'))
 const Setting=React.lazy(()=>import('@/page/Setting'))
 const Summary=React.lazy(()=>import('@/page/Summary'))
+const AIChatPage=React.lazy(()=>import('@/page/AIChatPage'))
 
 const routes = [
     { path: '/', element: <Navigate to="/home" /> },
@@ -26,6 +27,7 @@ const routes = [
     { path: '/editifo', element: <MainLayout><EditIfo /></MainLayout> },
     { path: '/setting', element: <MainLayout><Setting /></MainLayout> },
     { path: '/summary', element: <MainLayout><Summary /></MainLayout> },
+    { path: '/ai-chat', element: <AIChatPage /> },
     // 可以添加一个通配符路由，处理404情况
     { path: '*', element: <Navigate to="/home" /> }
 ]

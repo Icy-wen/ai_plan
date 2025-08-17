@@ -11,10 +11,17 @@ function verify(){
         const token=ctx.headers.authorization
         if(token){
             try{
-                const decode=jwt.verify(token,'666')
+                const decoded=jwt.verify(token,'666')
                 if(decoded.id){
-                    ctx.userId=decode.id
+                    ctx.userId=decoded.id
                     await next()
+                } else {
+                    // 当decoded.id不存在时，提供明确的响应
+                    ctx.status=401
+                    ctx.body={
+                        code:'0',
+                        msg:'无效的用户信息'
+                    }
                 }
             }catch(error){
                 ctx.status=401
